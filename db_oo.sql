@@ -40,7 +40,7 @@ ALTER TYPE tp_funcionario ADD ATTRIBUTE supervisor REF tp_diretor_executivo CASC
 
 CREATE OR REPLACE TYPE tp_escolhe AS OBJECT(
         data_escolha timestamp,
-	jornalista REF tp_jornalista;
+	jornalista REF tp_jornalista
 
 );
 
