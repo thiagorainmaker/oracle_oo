@@ -2,18 +2,18 @@ CREATE OR REPLACE TYPE tp_carro AS OBJECT (
     nome VARCHAR2(8)
 );
 
-CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
-    nome VARCHAR2(8)
-);
-
 CREATE TYPE tp_nt_carros AS TABLE OF tp_carro;
 
+CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
+   	 nome VARCHAR2(8),
+ 	carros tp_nt_carros
+);
 
-CREATE TABLE tb_lista_carros(
-    lista_carros tp_nt_carros)
+
+
+CREATE TABLE tb_carros of tp_pessoa ()
 NESTED TABLE lista_carros STORE AS tb_l_carros;
 
-ALTER TYPE tp_pessoa ADD ATTRIBUTE carros tp_nt_carros CASCADE;  
 
 ---------------------------------------------------------------------------------------------
 CREATE OR REPLACE TYPE tp_fone AS OBJECT (
