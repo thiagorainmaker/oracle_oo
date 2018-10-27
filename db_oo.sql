@@ -69,14 +69,16 @@ CREATE OR REPLACE TYPE tp_caderno_tematico AS OBJECT(
 	materias tp_nt_materias
 );
 
-CREATE TYPE tp_nt_cadernos AS TABLE OF tp_caderno_tematico;
+
+CREATE OR REPLACE TYPE tp_cadernos AS VARRAY(10) OF tp_caderno_tematico;
+
 
 CREATE OR REPLACE TYPE  tp_edicao   AS OBJECT  (
     valor NUMBER(10,2), 
     data_edicao timestamp,
     data_aprovacao timestamp,
 	responsavel REF tp_diretor_executivo,
-	cadernos tp_nt_cadernos
+	cadernos tp_cadernos
 );
 
 
@@ -131,15 +133,10 @@ CREATE OR REPLACE TYPE tp_revendedor AS OBJECT (
         razao_social varchar2(255)
 );
 
-drop table TAB_MATERIA
 
 CREATE TABLE tab_caderno_tematico OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
-
-CREATE TABLE TAB_EDICAO OF TP_EDICAO NESTED TABLE cadernos STORE AS tb_lis_cadernos;
-
-
+CREATE TABLE TAB_EDICAO OF TP_EDICAO ;
 CREATE TABLE TAB_escolhe OF tp_escolhe NESTED TABLE materias STORE AS tb_list_materias
-
 CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA ;
 CREATE TABLE TAB_ENDERECO OF TP_ENDERECO; 
 CREATE TABLE TAB_CONTATO OF TP_CONTATO ;
