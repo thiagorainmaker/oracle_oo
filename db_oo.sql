@@ -37,12 +37,6 @@ CREATE OR REPLACE TYPE tp_fotografo UNDER  tp_funcionario(
 
 ALTER TYPE tp_funcionario ADD ATTRIBUTE supervisor REF tp_diretor_executivo CASCADE;  
 
-CREATE OR REPLACE TYPE tp_escolhe AS OBJECT(
-        data_escolha timestamp,
-	jornalista REF tp_jornalista
-
-);
-
 
 CREATE OR REPLACE TYPE tp_qualificador  AS OBJECT (
         materia_de_capa NUMBER(1,0),
@@ -78,9 +72,9 @@ CREATE OR REPLACE TYPE tp_caderno_tematico AS OBJECT(
 CREATE TYPE tp_nt_cadernos AS TABLE OF tp_caderno_tematico;
 
 CREATE OR REPLACE TYPE  tp_edicao   AS OBJECT  (
-        valor NUMBER(10,2), 
-        data_edicao timestamp,
-        data_aprovacao timestamp,
+    valor NUMBER(10,2), 
+    data_edicao timestamp,
+    data_aprovacao timestamp,
 	responsavel REF tp_diretor_executivo,
 	cadernos tp_nt_cadernos
 );
@@ -94,6 +88,18 @@ CREATE OR REPLACE TYPE  tp_fotografia   AS OBJECT  (
         data timestamp,
     	fotografo REF tp_fotografo
 );
+
+
+CREATE OR REPLACE TYPE tp_fotos AS VARRAY(5) OF tp_fotografia;
+
+CREATE OR REPLACE TYPE  tp_escolhe   AS OBJECT  (
+	lista_fotos tp_fotos,
+        data timestamp,
+	materias  tp_nt_materias
+)
+
+
+
 
 
 CREATE OR REPLACE TYPE tp_anuncio  AS OBJECT (
@@ -125,9 +131,16 @@ CREATE OR REPLACE TYPE tp_revendedor AS OBJECT (
         razao_social varchar2(255)
 );
 
+drop table TAB_MATERIA
 
-CREATE TABLE TAB_MATERIA OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
-CREATE TABLE TAB_EDICAO OF TP_EDICAO NESTED TABLE cadernos STORE AS tb_l_cadernos;
+CREATE TABLE tab_caderno_tematico OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
+
+CREATE TABLE TAB_EDICAO OF TP_EDICAO NESTED TABLE cadernos STORE AS tb_lis_cadernos;
+
+
+CREATE TABLE TAB_escolhe OF tp_escolhe NESTED TABLE materias STORE AS tb_list_materias
+
+CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA ;
 CREATE TABLE TAB_ENDERECO OF TP_ENDERECO; 
 CREATE TABLE TAB_CONTATO OF TP_CONTATO ;
 CREATE TABLE TAB_DIRETOR_EXECUTIVO OF TP_DIRETOR_EXECUTIVO; 
@@ -135,7 +148,6 @@ CREATE TABLE TAB_DIAGRAMADOR OF TP_DIAGRAMADOR ;
 CREATE TABLE TAB_EDITOR OF TP_EDITOR ;
 CREATE TABLE TAB_JORNALISTA OF TP_JORNALISTA; 
 CREATE TABLE TAB_FOTOGRAFO OF TP_FOTOGRAFO ;
-CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA ;
 CREATE TABLE TAB_ANUNCIO OF TP_ANUNCIO; 
 CREATE TABLE TAB_QUALIFICADOR OF TP_QUALIFICADOR; 
 CREATE TABLE TAB_PESSOA_FISICA OF TP_PESSOA_FISICA; 
