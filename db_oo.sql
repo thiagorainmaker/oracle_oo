@@ -136,6 +136,7 @@ CREATE OR REPLACE TYPE tp_revendedor AS OBJECT (
 
 CREATE TABLE tab_caderno_tematico OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
 CREATE TABLE TAB_EDICAO OF TP_EDICAO ;
+CREATE TABLE TAB_materia OF tp_materia ;
 CREATE TABLE TAB_escolhe OF tp_escolhe NESTED TABLE materias STORE AS tb_list_materias
 CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA ;
 CREATE TABLE TAB_ENDERECO OF TP_ENDERECO; 
