@@ -1,4 +1,3 @@
-
 CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
         cep varchar2(255),
         logradouro varchar2(255),
@@ -44,24 +43,46 @@ CREATE OR REPLACE TYPE tp_escolhe AS OBJECT(
 
 );
 
+
+CREATE OR REPLACE TYPE tp_qualificador  AS OBJECT (
+        materia_de_capa NUMBER(1,0),
+        relevancia INTEGER,
+        data_qualificacao timestamp,
+	editor REF tp_editor
+);
+
+
+CREATE OR REPLACE TYPE  tp_materia AS OBJECT (
+        lead varchar2(255),
+        manchete varchar2(255),
+        texto varchar2(255),
+        titulo varchar2(255),
+        data_aprovacao timestamp,
+	editor REF tp_editor,
+        data_escrita timestamp,
+	jornalista REF tp_jornalista,
+	qualificador REF tp_qualificador,
+        data timestamp
+);
+
+CREATE TYPE tp_nt_materias AS TABLE OF tp_materia;
+
 CREATE OR REPLACE TYPE tp_caderno_tematico AS OBJECT(
 	descricao varchar2(255),
 	tema varchar2(255),
         data_diagramacao timestamp,
-	diagramador REF tp_diagramador	
+	diagramador REF tp_diagramador,	
+	materias tp_nt_materias
 );
 
-CREATE TYPE tp_nt_caderno_tematico AS TABLE OF tp_caderno_tematico;
-
-CREATE TABLE tb_lista_cadernos(lista_cadernos tp_nt_caderno_tematico) NESTED TABLE lista_cadernos STORE AS tb_l_cadernos;
-
+CREATE TYPE tp_nt_cadernos AS TABLE OF tp_caderno_tematico;
 
 CREATE OR REPLACE TYPE  tp_edicao   AS OBJECT  (
         valor NUMBER(10,2), 
         data_edicao timestamp,
         data_aprovacao timestamp,
 	responsavel REF tp_diretor_executivo,
-	cadernos tp_nt_caderno_tematico	
+	cadernos tp_nt_cadernos
 );
 
 
@@ -82,26 +103,7 @@ CREATE OR REPLACE TYPE tp_anuncio  AS OBJECT (
 	valor NUMBER(10,2)
 );
 
-CREATE OR REPLACE TYPE tp_qualificador  AS OBJECT (
-        materia_de_capa NUMBER(1,0),
-        relevancia INTEGER,
-        data_qualificacao timestamp,
-	editor REF tp_editor
-);
 
-CREATE OR REPLACE TYPE  tp_materia AS OBJECT (
-        lead varchar2(255),
-        manchete varchar2(255),
-        texto varchar2(255),
-        titulo varchar2(255),
-        data_aprovacao timestamp,
-	editor REF tp_editor,
-        data_escrita timestamp,
-	jornalista REF tp_jornalista,
-	qualificador REF tp_qualificador,
-	caderno REF tp_caderno_tematico,
-        data timestamp
-);
 
 CREATE OR REPLACE TYPE  tp_cliente AS OBJECT (
         texto varchar2(255),
@@ -123,6 +125,9 @@ CREATE OR REPLACE TYPE tp_revendedor AS OBJECT (
         razao_social varchar2(255)
 );
 
+
+CREATE TABLE TAB_MATERIA OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
+CREATE TABLE TAB_EDICAO OF TP_EDICAO NESTED TABLE cadernos STORE AS tb_l_cadernos;
 CREATE TABLE TAB_ENDERECO OF TP_ENDERECO; 
 CREATE TABLE TAB_CONTATO OF TP_CONTATO ;
 CREATE TABLE TAB_DIRETOR_EXECUTIVO OF TP_DIRETOR_EXECUTIVO; 
@@ -130,14 +135,9 @@ CREATE TABLE TAB_DIAGRAMADOR OF TP_DIAGRAMADOR ;
 CREATE TABLE TAB_EDITOR OF TP_EDITOR ;
 CREATE TABLE TAB_JORNALISTA OF TP_JORNALISTA; 
 CREATE TABLE TAB_FOTOGRAFO OF TP_FOTOGRAFO ;
-CREATE TABLE TAB_CADERNO_TEMATICO OF TP_CADERNO_TEMATICO; 
 CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA ;
-CREATE TABLE TAB_EDICAO OF TP_EDICAO ;
 CREATE TABLE TAB_ANUNCIO OF TP_ANUNCIO; 
 CREATE TABLE TAB_QUALIFICADOR OF TP_QUALIFICADOR; 
-CREATE TABLE TAB_MATERIA OF TP_MATERIA ;
 CREATE TABLE TAB_PESSOA_FISICA OF TP_PESSOA_FISICA; 
 CREATE TABLE TAB_PESSOA_JURIDICA OF TP_PESSOA_JURIDICA; 
 CREATE TABLE TAB_REVENDEDOR OF TP_REVENDEDOR ;
-
-
