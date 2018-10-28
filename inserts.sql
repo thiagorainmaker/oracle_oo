@@ -266,6 +266,19 @@ INSERT INTO tab_escolhe VALUES(
                     (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1)
 )
 
+-- INSERT DE CLIENTES - PESSOAS FÍSICAS E JURIDICAS
+
+insert into tab_contato values(tp_contato(7, '6666666', '9999999'));
+insert into tab_endereco values(tp_endereco(7, '78555', 'RUA', '456'));
+insert into tab_contato values(tp_contato(7, '6666666', '9999999'));
+insert into tab_endereco values(tp_endereco(8, '78555', 'RUA', '456'));
+
+
+insert into TAB_PESSOA_FISICA values( Tp_PESSOA_FISICA((SELECT REF(P) FROM tab_contato P WHERE cod = 7), 
+	(SELECT REF(P) FROM tab_endereco P WHERE cod = 7),'1111111111', '11111111') );
+insert into TAB_PESSOA_juridica values( Tp_PESSOA_juridica((SELECT REF(P) FROM tab_contato P WHERE cod = 8), 
+	(SELECT REF(P) FROM tab_endereco P WHERE cod = 8),'1111111111', 'loja xyz') );
+
 
 -- INSERT DE REVENDEDORES
 
