@@ -148,7 +148,7 @@ CREATE OR REPLACE TYPE tp_revendedor AS OBJECT (
         paises  nt_tp_paises -- localidades em que o revendedor atua
 );
 
-CREATE OR REPLACE TYPE  tp_distribuida (
+CREATE OR REPLACE TYPE  tp_distribuida AS OBJECT (
         data timestamp,
         tiragem INTEGER,
 	contato ref tp_contato,
@@ -157,7 +157,7 @@ CREATE OR REPLACE TYPE  tp_distribuida (
 );
 
 
-CREATE OR REPLACE TYPE  tp_compra (
+CREATE OR REPLACE TYPE  tp_compra AS OBJECT (
         data timestamp,
         termos varchar2(255),
 	valor NUMBER(10,2),
