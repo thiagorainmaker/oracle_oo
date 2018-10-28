@@ -1,5 +1,10 @@
 -- INSERT DE REVENDEDORES
 
+
+insert into tab_diretor_executivo values('João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 666555, '123123123', 'Direção', TO_DATE('2015/03/10 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), tp_contato('6666666', '7777777'), tp_endereco('7444444', 'Rual tal casa tal', '456456456') )
+
+
+
 insert into TAB_REVENDEDOR values(TP_REVENDEDOR('6666666', 'LOJA DO ZÉ', 
 nt_tp_paises( 
     tp_pais('ITÁLIA', nt_tp_localizacao(

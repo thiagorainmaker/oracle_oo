@@ -169,9 +169,9 @@ CREATE OR REPLACE TYPE  tp_compra AS OBJECT (
 
 
 
-CREATE TABLE TAB_PAIS  OF TP_PAIS NESTED TABLE localizacoes STORE AS nt_localizacao_t_P
+CREATE TABLE TAB_PAIS  OF TP_PAIS NESTED TABLE localizacoes STORE AS nt_localizacao_t_P;
 CREATE TABLE TAB_REVENDEDOR  OF TP_REVENDEDOR NESTED TABLE paises STORE AS nt_paises_t (NESTED TABLE localizacoes STORE AS nt_localizacao_t);
-CREATE TABLE TAB_escolhe OF tp_escolhe NESTED TABLE materias STORE AS tb_list_materias
+CREATE TABLE TAB_escolhe OF tp_escolhe NESTED TABLE materias STORE AS tb_list_materias;
 CREATE TABLE TAB_EDICAO OF TP_EDICAO  NESTED TABLE anuncios STORE AS tb_l_anuncios; 
 CREATE TABLE tab_caderno_tematico OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
 CREATE TABLE TAB_compra OF tp_compra  NESTED TABLE anuncios STORE AS tb_ls_anuncios; 
