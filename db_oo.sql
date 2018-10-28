@@ -129,7 +129,7 @@ CREATE OR REPLACE TYPE  tp_escolhe   AS OBJECT  (
 
 CREATE OR REPLACE TYPE  tp_cliente AS OBJECT (
         texto varchar2(255),
-	contato tp_contato,
+	contato ref tp_contato,
 	endereco tp_endereco
 )NOT FINAL;
 
@@ -148,6 +148,25 @@ CREATE OR REPLACE TYPE tp_revendedor AS OBJECT (
         paises  nt_tp_paises -- localidades em que o revendedor atua
 );
 
+CREATE OR REPLACE TYPE  tp_distribuida (
+        data timestamp,
+        tiragem INTEGER,
+	contato ref tp_contato,
+        edicao tp_edicao,
+	revendedor tp_revendedor
+);
+
+
+CREATE OR REPLACE TYPE  tp_compra (
+        data timestamp,
+        termos varchar2(255),
+	valor NUMBER(10,2),
+        cliente REF tp_cliente,
+	anuncios tp_nt_anuncios
+	
+);
+
+
 
 
 CREATE TABLE TAB_PAIS  OF TP_PAIS NESTED TABLE localizacoes STORE AS nt_localizacao_t_P
@@ -155,6 +174,7 @@ CREATE TABLE TAB_REVENDEDOR  OF TP_REVENDEDOR NESTED TABLE paises STORE AS nt_pa
 CREATE TABLE TAB_escolhe OF tp_escolhe NESTED TABLE materias STORE AS tb_list_materias
 CREATE TABLE TAB_EDICAO OF TP_EDICAO  NESTED TABLE anuncios STORE AS tb_l_anuncios; 
 CREATE TABLE tab_caderno_tematico OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
+CREATE TABLE TAB_compra OF tp_compra  NESTED TABLE anuncios STORE AS tb_ls_anuncios; 
 CREATE TABLE TAB_materia OF tp_materia ;
 CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA ;
 CREATE TABLE tab_localizacao OF tp_localizacao ;
