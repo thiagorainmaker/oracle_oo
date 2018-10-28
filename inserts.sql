@@ -98,6 +98,55 @@ TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 ));
 
 
+insert into TAB_MATERIA values(
+TP_MATERIA('LEAD DA MATÉRIA 4', 'MANCHETE - TEXTO EM DESTAQUE 4', 'TEXTO ALEATÓRIO DA MATÉRIA ... 4 ', 'TÍTULO GENÉRICO 4 ', 
+TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+(SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
+TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+(SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
+tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
+));
+
+-- CADERNO TEMÁTICO
+
+insert into tab_caderno_tematico values ( tp_caderno_tematico('descrição genérica', 'tema genérico', 
+TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+(SELECT REF(P) FROM tab_diagramador P WHERE id = 1), tp_nt_materias(
+
+        TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+        TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
+        TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
+        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
+        ), 
+        
+        TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+        TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
+        TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
+        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
+        ), 
+        
+        TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+        TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
+        TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
+        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
+        ))
+));
+
+-- INSERT ANUNCIO
+
+INSERT INTO TAB_ANUNCIO VALUES (tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60));
+
+
 
 -- INSERT DE REVENDEDORES
 
