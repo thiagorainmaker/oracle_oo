@@ -7,7 +7,6 @@ insert into tab_contato values(tp_contato(3, '6666666', '9999999'));
 insert into tab_contato values(tp_contato(4, '6666666', '9999999'));
 insert into tab_contato values(tp_contato(5, '6666666', '9999999'));
 
-
 insert into tab_endereco values(tp_endereco(1, '78555', 'AV', '456'));
 insert into tab_endereco values(tp_endereco(2, '78555', 'RUA', '456'));
 insert into tab_endereco values(tp_endereco(3, '78555', 'RUA', '456'));

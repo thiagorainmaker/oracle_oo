@@ -131,9 +131,8 @@ CREATE OR REPLACE TYPE  tp_escolhe   AS OBJECT  (
 
 
 CREATE OR REPLACE TYPE  tp_cliente AS OBJECT (
-        texto varchar2(255),
 	contato ref tp_contato,
-	endereco tp_endereco
+	endereco ref tp_endereco
 )NOT FINAL;
 
 CREATE OR REPLACE TYPE tp_pessoa_fisica  UNDER tp_cliente(
