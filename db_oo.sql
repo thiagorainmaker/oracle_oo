@@ -87,7 +87,7 @@ CREATE OR REPLACE TYPE tp_caderno_tematico AS OBJECT(
 );
 
 
-CREATE OR REPLACE TYPE tp_cadernos AS VARRAY(10) OF tp_caderno_tematico;
+CREATE OR REPLACE TYPE tp_cadernos AS VARRAY(5) OF tp_caderno_tematico;
 
 
 CREATE OR REPLACE TYPE tp_anuncio  AS OBJECT (
