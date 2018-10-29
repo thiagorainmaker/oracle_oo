@@ -19,6 +19,7 @@ tp_diretor_executivo(1, 'João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/
 	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 1), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 1),
+	NULL,
 	NULL
 ));
 
@@ -264,7 +265,7 @@ INSERT INTO tab_escolhe VALUES(
                     
                     ),
                     (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1)
-)
+);
 
 -- INSERT DE CLIENTES - PESSOAS FÍSICAS E JURIDICAS
 insert into tab_contato values(tp_contato(7, '6666666', '9999999'));
