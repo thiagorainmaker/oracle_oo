@@ -39,7 +39,7 @@ CREATE OR REPLACE TYPE tp_funcionario  AS OBJECT (
         data_admissao timestamp,
         contato REF tp_contato,
         endereco REF tp_endereco
-) NOT INSTANTIABLE NOT FINAL
+) NOT INSTANTIABLE NOT FINAL;
   
 CREATE OR REPLACE TYPE tp_diretor_executivo UNDER  tp_funcionario(
 	foto blob -- campo imágem atendendo ao requisito
