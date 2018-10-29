@@ -267,18 +267,54 @@ INSERT INTO tab_escolhe VALUES(
 )
 
 -- INSERT DE CLIENTES - PESSOAS FÍSICAS E JURIDICAS
-
 insert into tab_contato values(tp_contato(7, '6666666', '9999999'));
 insert into tab_endereco values(tp_endereco(7, '78555', 'RUA', '456'));
-insert into tab_contato values(tp_contato(7, '6666666', '9999999'));
+insert into tab_contato values(tp_contato(8, '666456666', '9999454999'));
 insert into tab_endereco values(tp_endereco(8, '78555', 'RUA', '456'));
 
 
-insert into TAB_PESSOA_FISICA values( Tp_PESSOA_FISICA((SELECT REF(P) FROM tab_contato P WHERE cod = 7), 
-	(SELECT REF(P) FROM tab_endereco P WHERE cod = 7),'1111111111', '11111111') );
-insert into TAB_PESSOA_juridica values( Tp_PESSOA_juridica((SELECT REF(P) FROM tab_contato P WHERE cod = 8), 
-	(SELECT REF(P) FROM tab_endereco P WHERE cod = 8),'1111111111', 'loja xyz') );
+insert into TAB_PESSOA_FISICA values( Tp_PESSOA_FISICA(1, (SELECT REF(P) FROM tab_contato P WHERE cod = 7), 
+	(SELECT REF(P) FROM tab_endereco P WHERE cod = 7),'14561111111', '145646111111') );
+	
 
+insert into TAB_PESSOA_juridica values( Tp_PESSOA_juridica(1, (SELECT REF(P) FROM tab_contato P WHERE cod = 7), 
+	(SELECT REF(P) FROM tab_endereco P WHERE cod = 7),'14561111111', '145646111111') );
+	
+
+-- INSERT COMPRAS
+
+insert into tab_compra values (
+    tp_compra(
+        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        'texto genérico', 
+        250.25,
+        (SELECT REF(P) FROM TAB_PESSOA_FISICA P WHERE id = 1), 
+        tp_nt_anuncios(
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60)
+        )
+    )
+)
+
+
+insert into tab_compra values (
+    tp_compra(
+        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+        'texto genérico', 
+        250.25,
+        (SELECT REF(P) FROM TAB_PESSOA_juridica P WHERE id = 1), 
+        tp_nt_anuncios(
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60),
+            tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60)
+        )
+    )
+)
 
 -- INSERT DE REVENDEDORES
 
