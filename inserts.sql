@@ -64,7 +64,7 @@ TP_JORNALISTA(1, 'JULIANA AMORIN', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh
 -- INSERT DE MATÉRIA
 
 insert into TAB_MATERIA values(
-TP_MATERIA('LEAD DA MATÉRIA', 'MANCHETE - TEXTO EM DESTAQUE', 'TEXTO ALEATÓRIO DA MATÉRIA ...', 'TÍTULO GENÉRICO', 
+TP_MATERIA(1, 'LEAD DA MATÉRIA', 'MANCHETE - TEXTO EM DESTAQUE', 'TEXTO ALEATÓRIO DA MATÉRIA ...', 'TÍTULO GENÉRICO', 
 TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -75,7 +75,7 @@ TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 
 
 insert into TAB_MATERIA values(
-TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 2', 'TEXTO ALEATÓRIO DA MATÉRIA ... 2 ', 'TÍTULO GENÉRICO 2 ', 
+TP_MATERIA(2, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 2', 'TEXTO ALEATÓRIO DA MATÉRIA ... 2 ', 'TÍTULO GENÉRICO 2 ', 
 TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -88,7 +88,7 @@ TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 
 
 insert into TAB_MATERIA values(
-TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+TP_MATERIA(3, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
 TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -99,7 +99,7 @@ TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 
 
 insert into TAB_MATERIA values(
-TP_MATERIA('LEAD DA MATÉRIA 4', 'MANCHETE - TEXTO EM DESTAQUE 4', 'TEXTO ALEATÓRIO DA MATÉRIA ... 4 ', 'TÍTULO GENÉRICO 4 ', 
+TP_MATERIA(4, 'LEAD DA MATÉRIA 4', 'MANCHETE - TEXTO EM DESTAQUE 4', 'TEXTO ALEATÓRIO DA MATÉRIA ... 4 ', 'TÍTULO GENÉRICO 4 ', 
 TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -114,7 +114,7 @@ insert into tab_caderno_tematico values ( tp_caderno_tematico('descrição gené
 TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_diagramador P WHERE id = 1), tp_nt_materias(
 
-        TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+        TP_MATERIA(5, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -123,7 +123,7 @@ TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
         ), 
         
-        TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+        TP_MATERIA(6, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -132,7 +132,7 @@ TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
         ), 
         
-        TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+        TP_MATERIA(7, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -159,7 +159,7 @@ insert into tab_edicao values (
                     TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                     (SELECT REF(P) FROM tab_diagramador P WHERE id = 1), 
                     tp_nt_materias(
-                         TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+                         TP_MATERIA(8, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
                         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
                         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -167,7 +167,7 @@ insert into tab_edicao values (
                         tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
                         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
                         ), 
-                         TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+                         TP_MATERIA(9, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
                         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
                         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -175,7 +175,7 @@ insert into tab_edicao values (
                         tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
                         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
                         ), 
-                         TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
+                         TP_MATERIA(10, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
                         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
                         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
@@ -200,71 +200,57 @@ insert into tab_edicao values (
 -- INSERT DE FOTOGRAFIA
 
 INSERT INTO tab_fotografia VALUES( 
-    TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    tp_fotografia( 1,
+    TO_DATE( '2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
     'DESCRIÇÃO DA IMG', 
      NULL, 
     'LOCAL DA FOTO', 
     TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-    (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1)
+    (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1))
+);
+
+
+
+INSERT INTO tab_fotografia VALUES( 
+    tp_fotografia( 2,
+    TO_DATE( '2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    'DESCRIÇÃO DA IMG', 
+     NULL, 
+    'LOCAL DA FOTO', 
+    TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1))
+);
+
+
+
+INSERT INTO tab_fotografia VALUES( 
+    tp_fotografia( 3,
+    TO_DATE( '2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    'DESCRIÇÃO DA IMG', 
+     NULL, 
+    'LOCAL DA FOTO', 
+    TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1))
+);
+
+
+INSERT INTO tab_fotografia VALUES( 
+    tp_fotografia( 4,
+    TO_DATE( '2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    'DESCRIÇÃO DA IMG', 
+     NULL, 
+    'LOCAL DA FOTO', 
+    TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1))
 );
 
 -- INSERT ESCOLHA
 
 INSERT INTO tab_escolhe VALUES(
-    tp_fotos(
-        TP_fotografia( 
-            TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-            'DESCRIÇÃO DA IMG', 
-            null, 
-            'LOCAL DA FOTO', 
-            TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-            (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1)),
-            
-        TP_fotografia( 
-            TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-            'DESCRIÇÃO DA IMG', 
-            null, 
-            'LOCAL DA FOTO', 
-            TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-            (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1)),
-            
-         TP_fotografia( 
-            TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-            'DESCRIÇÃO DA IMG', 
-            null, 
-            'LOCAL DA FOTO', 
-            TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-            (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1))
-    ), 
+    (SELECT REF(P) FROM tab_fotografia P WHERE cod = 1),
     TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-    tp_nt_materias(
-                         TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
-                        TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-                        (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
-                        TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-                        (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-                        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
-                        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
-                        ), 
-                         TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
-                        TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-                        (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
-                        TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-                        (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-                        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
-                        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
-                        ), 
-                         TP_MATERIA('LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
-                        TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-                        (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
-                        TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-                        (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-                        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
-                        TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
-                        )
-                    
-                    ),
-                    (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1)
+    (SELECT REF(P) FROM tab_materia P WHERE cod = 1),
+    (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1)
 );
 
 -- INSERT DE CLIENTES - PESSOAS FÍSICAS E JURIDICAS

@@ -63,6 +63,7 @@ CREATE OR REPLACE TYPE tp_qualificador  AS OBJECT (
 
 
 CREATE OR REPLACE TYPE  tp_materia AS OBJECT (
+    	cod NUMBER(4),       
         lead varchar2(255),
         manchete varchar2(255),
         texto varchar2(255),
@@ -109,6 +110,7 @@ CREATE OR REPLACE TYPE  tp_edicao   AS OBJECT  (
 
 
 CREATE OR REPLACE TYPE  tp_fotografia   AS OBJECT  (
+	cod NUMBER(4),   
         data_foto timestamp,
         descricao varchar2(255),
         imagem varchar2(255),
@@ -118,12 +120,11 @@ CREATE OR REPLACE TYPE  tp_fotografia   AS OBJECT  (
 );
 
 
-CREATE OR REPLACE TYPE tp_fotos AS VARRAY(5) OF tp_fotografia;
 
 CREATE OR REPLACE TYPE  tp_escolhe   AS OBJECT  (
-	lista_fotos tp_fotos,
-        data timestamp,
-	materias tp_nt_materias,
+	foto REF TP_FOTOGRAFIA,
+    	data timestamp,
+	materia REF tp_materia,
     	jornalista REF tp_jornalista
 );
 
@@ -173,12 +174,12 @@ CREATE OR REPLACE TYPE  tp_compra AS OBJECT (
 
 CREATE TABLE TAB_PAIS  OF TP_PAIS NESTED TABLE localizacoes STORE AS nt_localizacao_t_P;
 CREATE TABLE TAB_REVENDEDOR  OF TP_REVENDEDOR NESTED TABLE paises STORE AS nt_paises_t (NESTED TABLE localizacoes STORE AS nt_localizacao_t);
-CREATE TABLE TAB_escolhe OF tp_escolhe NESTED TABLE materias STORE AS tb_list_materias;
+CREATE TABLE TAB_escolhe OF tp_escolhe;
 CREATE TABLE TAB_EDICAO OF TP_EDICAO  NESTED TABLE anuncios STORE AS tb_l_anuncios; 
 CREATE TABLE tab_caderno_tematico OF tp_caderno_tematico NESTED TABLE materias STORE AS tb_l_materias;
 CREATE TABLE TAB_compra OF tp_compra  NESTED TABLE anuncios STORE AS tb_ls_anuncios; 
-CREATE TABLE TAB_materia OF tp_materia ;
-CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA ;
+CREATE TABLE TAB_materia OF tp_materia ( cod PRIMARY KEY); 
+CREATE TABLE TAB_FOTOGRAFIA OF TP_FOTOGRAFIA  ( cod PRIMARY KEY);
 CREATE TABLE tab_localizacao OF tp_localizacao ;
 CREATE TABLE TAB_ENDERECO OF TP_ENDERECO  ( cod PRIMARY KEY); 
 CREATE TABLE TAB_CONTATO OF TP_CONTATO ( cod PRIMARY KEY) ;
