@@ -298,7 +298,7 @@ insert into tab_compra values (
             tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60)
         )
     )
-)
+);
 
 
 insert into tab_compra values (
@@ -315,7 +315,7 @@ insert into tab_compra values (
             tp_anuncio('10X10', 'TEXTO ANUNCIO', 'TÍTULO ANUNCIO', 58.60)
         )
     )
-)
+);
 
 -- INSERT DE REVENDEDORES
 
