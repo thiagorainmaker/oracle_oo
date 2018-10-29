@@ -109,7 +109,7 @@ CREATE OR REPLACE TYPE  tp_edicao   AS OBJECT  (
 CREATE OR REPLACE TYPE  tp_fotografia   AS OBJECT  (
         data_foto timestamp,
         descricao varchar2(255),
-        imagem blob,
+        imagem varchar2(255),
         local varchar2(255),
         data timestamp,
     	fotografo REF tp_fotografo
