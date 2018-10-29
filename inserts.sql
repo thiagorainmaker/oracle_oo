@@ -1,4 +1,3 @@
-
 -- INSERT DE FUNCIONARIOS
 
 insert into tab_contato values(tp_contato(1, '6666666', '9999999'));
@@ -34,7 +33,7 @@ insert into tab_departamento values(
         'Jornalismo',
         (SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)
     )
-)
+);
 
 
 insert into TAB_FOTOGRAFO values (
@@ -50,7 +49,6 @@ TP_FOTOGRAFO(1, 'João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh
 insert into tab_diagramador values (
 TP_diagramador(1, 'Gustavo Fernandes', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, '', '', 
-	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 2), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 2),
 	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)), 
@@ -62,7 +60,6 @@ TP_diagramador(1, 'Gustavo Fernandes', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/d
 insert into tab_editor values (
 TP_editor(1, 'MARIA DE SOUSA', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, '', '', 
-	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 3), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 3),
 	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)), 
@@ -73,7 +70,6 @@ TP_editor(1, 'MARIA DE SOUSA', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:m
 insert into tab_JORNALISTA values (
 TP_JORNALISTA(1, 'JULIANA AMORIN', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, '', '', 
-	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 4), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 4),
 	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)), 
@@ -378,4 +374,3 @@ nt_tp_paises(
     ))
     )
 ));
-
