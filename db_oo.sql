@@ -27,13 +27,15 @@ CREATE OR REPLACE TYPE tp_contato AS OBJECT  (
         fone varchar2(255)
 );
 
+
+
+
 CREATE OR REPLACE TYPE tp_funcionario  AS OBJECT (
 	id NUMBER(4),  
         nome varchar2(255),
         data_nascimento timestamp,
         matricula INTEGER,
         cpf varchar2(255),
-        setor varchar2(255),
         data_admissao timestamp,
         contato REF tp_contato,
         endereco REF tp_endereco
@@ -51,7 +53,15 @@ CREATE OR REPLACE TYPE tp_jornalista UNDER  tp_funcionario();
 
 CREATE OR REPLACE TYPE tp_fotografo UNDER  tp_funcionario();
 
-ALTER TYPE tp_funcionario ADD ATTRIBUTE supervisor REF tp_diretor_executivo CASCADE;  
+ALTER TYPE tp_funcionario ADD ATTRIBUTE supervisor REF tp_diretor_executivo CASCADE; 
+
+CREATE OR REPLACE TYPE tp_departamento AS OBJECT  (
+  	cod NUMBER(4),
+        nome varchar2(255),
+        chefe REF  tp_diretor_executivo
+);
+
+ALTER TYPE tp_funcionario ADD ATTRIBUTE setor REF tp_departamento CASCADE;  
 
 
 CREATE OR REPLACE TYPE tp_qualificador  AS OBJECT (
@@ -122,7 +132,7 @@ CREATE OR REPLACE TYPE  tp_fotografia   AS OBJECT  (
 
 
 CREATE OR REPLACE TYPE  tp_escolhe   AS OBJECT  (
-	foto REF TP_FOTOGRAFIA,
+	foto REF tp_FOTOGRAFIA,
     	data timestamp,
 	materia REF tp_materia,
     	jornalista REF tp_jornalista
@@ -192,3 +202,6 @@ CREATE TABLE TAB_ANUNCIO OF TP_ANUNCIO;
 CREATE TABLE TAB_QUALIFICADOR OF TP_QUALIFICADOR; 
 CREATE TABLE TAB_PESSOA_FISICA OF TP_PESSOA_FISICA  ( id PRIMARY KEY, CPF unique) ; 
 CREATE TABLE TAB_PESSOA_JURIDICA OF TP_PESSOA_JURIDICA ( id PRIMARY KEY, CNPJ unique) ;
+create table tab_departamento OF tp_departamento ( cod PRIMARY KEY, nome NOT NULL, chefe WITH ROWID REFERENCES tab_diretor_executivo);
+
+

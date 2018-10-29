@@ -14,22 +14,37 @@ insert into tab_endereco values(tp_endereco(4, '78555', 'RUA', '456'));
 insert into tab_endereco values(tp_endereco(5, '78555', 'RUA', '456'));
 
 insert into tab_diretor_executivo values (
-tp_diretor_executivo(1, 'João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
-	666555, '', '', 
-	'' , 
+tp_diretor_executivo(
+	1, 
+	'João das neves', 
+	TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
+	666555, 
+	'00103841111',  
+	TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 1), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 1),
+	NULL,
 	NULL,
 	NULL
 ));
 
+insert into tab_departamento values(
+    tp_departamento(
+        1,
+        'Jornalismo',
+        (SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)
+    )
+)
+
+
 insert into TAB_FOTOGRAFO values (
 TP_FOTOGRAFO(1, 'João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
-	666555, '', '', 
+	666555, '', 
 	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 5), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 5),
-	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1))
+	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)),
+	(SELECT REF(P) FROM tab_departamento P WHERE cod = 1) 
 ));
 
 insert into tab_diagramador values (
@@ -38,7 +53,8 @@ TP_diagramador(1, 'Gustavo Fernandes', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/d
 	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 2), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 2),
-	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1))
+	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)), 
+	(SELECT REF(P) FROM tab_departamento P WHERE cod = 1) 
 ));
 
 
@@ -49,7 +65,8 @@ TP_editor(1, 'MARIA DE SOUSA', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:m
 	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 3), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 3),
-	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1))
+	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)), 
+	(SELECT REF(P) FROM tab_departamento P WHERE cod = 1) 
 ));
 
 
@@ -59,7 +76,8 @@ TP_JORNALISTA(1, 'JULIANA AMORIN', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh
 	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 4), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 4),
-	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1))
+	((SELECT REF(P) FROM tab_diretor_executivo P WHERE id = 1)), 
+	(SELECT REF(P) FROM tab_departamento P WHERE cod = 1) 
 ));
 -- INSERT DE MATÉRIA
 
