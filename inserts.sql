@@ -201,7 +201,7 @@ insert into tab_edicao values (
 INSERT INTO tab_fotografia VALUES( 
     TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
     'DESCRIÇÃO DA IMG', 
-    'IMG', 
+     NULL, 
     'LOCAL DA FOTO', 
     TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
     (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1)
@@ -214,7 +214,7 @@ INSERT INTO tab_escolhe VALUES(
         TP_fotografia( 
             TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
             'DESCRIÇÃO DA IMG', 
-            'IMG', 
+            null, 
             'LOCAL DA FOTO', 
             TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
             (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1)),
@@ -222,7 +222,7 @@ INSERT INTO tab_escolhe VALUES(
         TP_fotografia( 
             TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
             'DESCRIÇÃO DA IMG', 
-            'IMG', 
+            null, 
             'LOCAL DA FOTO', 
             TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
             (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1)),
@@ -230,7 +230,7 @@ INSERT INTO tab_escolhe VALUES(
          TP_fotografia( 
             TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
             'DESCRIÇÃO DA IMG', 
-            'IMG', 
+            null, 
             'LOCAL DA FOTO', 
             TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
             (SELECT REF(P) FROM tab_fotografo P WHERE ID = 1))
