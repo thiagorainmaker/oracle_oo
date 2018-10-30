@@ -30,3 +30,42 @@ update tab_materia m set m.texto = 'blá blá blá' where cod = 501;
 update tab_materia m set m.texto = 'blá blá blá' where cod = 500;
 
 -----------------------------------------------------------------------------------------------------------------------------------
+
+
+-- trigger responsavel por manter sempre como supervisor dos jornalistas o diretor executivo com mais tempo de casa
+-- para testar a triguer primeiro execute o código de criação da trigger
+
+CREATE OR REPLACE TRIGGER verifica_diretor_executivo
+AFTER INSERT ON tab_diretor_executivo
+DECLARE
+    v_sup TP_DIRETOR_EXECUTIVO;
+BEGIN
+   UPDATE tab_jornalista j SET j.supervisor = (  select REF(T) from tab_diretor_executivo t where data_admissao IN (select min(t1.data_admissao)  from tab_diretor_executivo t1 ) );
+END;
+
+-- em seguida faça uma consulta no diretor executivo dos jornalistas
+-- logo apos rodar o script de insert o diretor executivo vai ser o João das neves
+select t.supervisor.nome from tab_jornalista t
+
+-- para disparar a trigger basta fazer um insert de um diretor executivo com mais tempo de casa
+insert into tab_diretor_executivo values (
+tp_diretor_executivo(
+	100, 
+	'Gustavo Batista', 
+	TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
+	666555, 
+	'00103841111',  
+	TO_DATE('2001/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+	(SELECT REF(P) FROM tab_contato P WHERE cod = 1), 
+	(SELECT REF(P) FROM tab_endereco P WHERE cod = 1),
+	NULL,
+	NULL,
+	NULL
+));
+
+-- execute novamente a consulta e observe que o supervisor dos jornalista agora é o Gustavo Batista
+select t.supervisor.nome from tab_jornalista t
+
+
+
+

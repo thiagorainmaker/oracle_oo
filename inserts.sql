@@ -27,6 +27,23 @@ tp_diretor_executivo(
 	NULL
 ));
 
+
+insert into tab_diretor_executivo values (
+tp_diretor_executivo(
+	2, 
+	'Maria de Sousa', 
+	TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
+	666555, 
+	'00103841111',  
+	TO_DATE('2010/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+	(SELECT REF(P) FROM tab_contato P WHERE cod = 1), 
+	(SELECT REF(P) FROM tab_endereco P WHERE cod = 1),
+	NULL,
+	NULL,
+	NULL
+));
+
+
 insert into tab_departamento values(
     tp_departamento(
         1,
