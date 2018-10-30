@@ -59,8 +59,7 @@ tp_diretor_executivo(
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 1), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 1),
 	NULL,
-	NULL,
-	NULL
+	NULL 
 ));
 
 -- execute novamente a consulta e observe que o supervisor dos jornalista agora é o Gustavo Batista
@@ -70,29 +69,27 @@ select t.supervisor.nome from tab_jornalista t
 --------------------------------------------------------------------------------------------------------------------------------
 
 
+-- trigger que impede a redução do valor de uma edição
+-- para testar primeiro execute o código de criação da trigger
 
-CREATE OR REPLACE TRIGGER trg_verifica_qualificacao
-BEFORE UPDATE ON tab_qualificador
+CREATE OR REPLACE TRIGGER trg_verifica_valor_edicao
+BEFORE UPDATE  OF valor ON tab_edicao
     FOR EACH ROW
 BEGIN
-        IF :OLD.materia_de_capa = 1 THEN
-            dbms_output.put_line ('capa');
+        IF :OLD.valor > :NEW.valor THEN
+           Raise_application_error(-20325,'Não é permitido reduzir o valor da edição' || 'Operação cancelada');
         END IF;
 END;
 
-insert into tab_qualificador values (
-tp_qualificador(
-    101,
-    0, 
-    2, 
-    TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-    null));
-    
-select t.relevancia, t.materia_de_capa from tab_qualificador t where cod = 100;
+-- em seguida, para fins de validação, faça uma busca pelo valor atual das ediçoes
+select t.valor from tab_edicao t
 
-update tab_qualificador t set t.relevancia = 2 where t.cod = 101;
+-- apos executar o script de insersert o valor será de 5.20
+-- O código a seguir demonstra que caso o valor de atualização seja maior, o update funciona normalmente
+update tab_edicao t set t.valor = 7.0
 
-select t.* from tab_qualificador t
+-- no entanto se o valor da edição for menor que o valor atual, a trigger é acionada e impede a atualização
+update tab_edicao t set t.valor = 3.0
 
 
 

@@ -295,8 +295,8 @@ insert into TAB_PESSOA_FISICA values( Tp_PESSOA_FISICA(1, (SELECT REF(P) FROM ta
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 7),'14561111111', '145646111111') );
 	
 
-insert into TAB_PESSOA_juridica values( Tp_PESSOA_juridica(1, (SELECT REF(P) FROM tab_contato P WHERE cod = 7), 
-	(SELECT REF(P) FROM tab_endereco P WHERE cod = 7),'14561111111', '145646111111') );
+insert into TAB_PESSOA_juridica values( Tp_PESSOA_juridica(1, (SELECT REF(P) FROM tab_contato P WHERE cod = 8), 
+	(SELECT REF(P) FROM tab_endereco P WHERE cod = 8),'14561111111', '145646111111') );
 	
 
 -- INSERT COMPRAS
