@@ -100,7 +100,7 @@ TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+tp_qualificador(1, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
 TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 ));
 
@@ -111,7 +111,7 @@ TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+tp_qualificador(2, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
 TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 ));
 
@@ -124,7 +124,7 @@ TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+tp_qualificador(3, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
 TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 ));
 
@@ -135,7 +135,7 @@ TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
 TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
 (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+tp_qualificador(4, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
 TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 ));
 
@@ -150,7 +150,7 @@ TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
         (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+        tp_qualificador(5, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
         ), 
         
@@ -159,7 +159,7 @@ TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
         (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+        tp_qualificador(6, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
         ), 
         
@@ -168,7 +168,7 @@ TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
         (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+        tp_qualificador(7, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
         ))
 ));
@@ -195,7 +195,7 @@ insert into tab_edicao values (
                         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
                         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                         (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-                        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+                        tp_qualificador(8, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
                         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
                         ), 
                          TP_MATERIA(9, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
@@ -203,7 +203,7 @@ insert into tab_edicao values (
                         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
                         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                         (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-                        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+                        tp_qualificador(9, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
                         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
                         ), 
                          TP_MATERIA(10, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
@@ -211,7 +211,7 @@ insert into tab_edicao values (
                         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
                         TO_DATE('2016/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                         (SELECT REF(P) FROM tab_jornalista P WHERE ID = 1), 
-                        tp_qualificador(1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
+                        tp_qualificador(10, 1, 2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), (SELECT REF(P) FROM tab_editor P WHERE ID = 1)),
                         TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
                         )
                     

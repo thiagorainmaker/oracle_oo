@@ -67,5 +67,33 @@ tp_diretor_executivo(
 select t.supervisor.nome from tab_jornalista t
 
 
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+CREATE OR REPLACE TRIGGER trg_verifica_qualificacao
+BEFORE UPDATE ON tab_qualificador
+    FOR EACH ROW
+BEGIN
+        IF :OLD.materia_de_capa = 1 THEN
+            dbms_output.put_line ('capa');
+        END IF;
+END;
+
+insert into tab_qualificador values (
+tp_qualificador(
+    101,
+    0, 
+    2, 
+    TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
+    null));
+    
+select t.relevancia, t.materia_de_capa from tab_qualificador t where cod = 100;
+
+update tab_qualificador t set t.relevancia = 2 where t.cod = 101;
+
+select t.* from tab_qualificador t
+
+
 
 
