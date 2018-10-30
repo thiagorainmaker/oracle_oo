@@ -31,7 +31,8 @@ CREATE OR REPLACE TYPE tp_contato AS OBJECT  (
 
 
 CREATE OR REPLACE TYPE tp_funcionario  AS OBJECT (
-	id NUMBER(4),  
+	id NUMBER(4),
+	salario NUMBER(10,2),  
         nome varchar2(255),
         data_nascimento timestamp,
         matricula INTEGER,

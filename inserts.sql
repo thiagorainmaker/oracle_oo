@@ -14,7 +14,8 @@ insert into tab_endereco values(tp_endereco(5, '78555', 'RUA', '456'));
 
 insert into tab_diretor_executivo values (
 tp_diretor_executivo(
-	1, 
+	1,
+	5000.00, 
 	'João das neves', 
 	TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, 
@@ -30,7 +31,8 @@ tp_diretor_executivo(
 
 insert into tab_diretor_executivo values (
 tp_diretor_executivo(
-	2, 
+	2,
+	5200.00, 
 	'Maria de Sousa', 
 	TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, 
@@ -54,7 +56,7 @@ insert into tab_departamento values(
 
 
 insert into TAB_FOTOGRAFO values (
-TP_FOTOGRAFO(1, 'João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
+TP_FOTOGRAFO(1, 3200.00, 'João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, '', 
 	'' , 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 5), 
@@ -64,7 +66,7 @@ TP_FOTOGRAFO(1, 'João das neves', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh
 ));
 
 insert into tab_diagramador values (
-TP_diagramador(1, 'Gustavo Fernandes', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
+TP_diagramador(1, 2500.00,  'Gustavo Fernandes', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, '', '', 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 2), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 2),
@@ -75,7 +77,7 @@ TP_diagramador(1, 'Gustavo Fernandes', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/d
 
 
 insert into tab_editor values (
-TP_editor(1, 'MARIA DE SOUSA', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
+TP_editor(1, 3800.00,  'MARIA DE SOUSA', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, '', '', 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 3), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 3),
@@ -85,7 +87,7 @@ TP_editor(1, 'MARIA DE SOUSA', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:m
 
 
 insert into tab_JORNALISTA values (
-TP_JORNALISTA(1, 'JULIANA AMORIN', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
+TP_JORNALISTA(1, 4500.00,  'JULIANA AMORIN', TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),
 	666555, '', '', 
 	(SELECT REF(P) FROM tab_contato P WHERE cod = 4), 
 	(SELECT REF(P) FROM tab_endereco P WHERE cod = 4),
