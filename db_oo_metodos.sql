@@ -93,9 +93,7 @@ CREATE OR REPLACE TYPE tp_caderno_tematico AS OBJECT(
 	descricao varchar2(255),
 	tema varchar2(255),
         data_diagramacao timestamp,
-	diagramador REF tp_diagramador,
-  	data_revisao timestamp,
-	editor REF tp_editor,	
+	diagramador REF tp_diagramador,	
 	materias tp_nt_materias
 );
 
@@ -202,6 +200,7 @@ CREATE TABLE TAB_EDITOR OF TP_EDITOR ( id PRIMARY KEY);
 CREATE TABLE TAB_JORNALISTA OF TP_JORNALISTA ( id PRIMARY KEY); 
 CREATE TABLE TAB_FOTOGRAFO OF TP_FOTOGRAFO ( id PRIMARY KEY);
 CREATE TABLE TAB_ANUNCIO OF TP_ANUNCIO; 
+CREATE TABLE TAB_QUALIFICADOR OF TP_QUALIFICADOR ( cod PRIMARY KEY);
 CREATE TABLE TAB_PESSOA_FISICA OF TP_PESSOA_FISICA  ( id PRIMARY KEY, CPF unique) ; 
 CREATE TABLE TAB_PESSOA_JURIDICA OF TP_PESSOA_JURIDICA ( id PRIMARY KEY, CNPJ unique) ;
 create table tab_departamento OF tp_departamento ( cod PRIMARY KEY, nome NOT NULL, chefe WITH ROWID REFERENCES tab_diretor_executivo);

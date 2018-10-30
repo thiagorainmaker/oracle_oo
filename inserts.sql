@@ -141,10 +141,14 @@ TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss')
 
 -- CADERNO TEMÁTICO
 
-insert into tab_caderno_tematico values ( tp_caderno_tematico('descrição genérica', 'tema genérico', 
-TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
-(SELECT REF(P) FROM tab_diagramador P WHERE id = 1), tp_nt_materias(
-
+insert into tab_caderno_tematico values ( tp_caderno_tematico(
+'descrição genérica', -- descrição
+'tema genérico', -- tema
+TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),  -- data diagramação
+(SELECT REF(P) FROM tab_diagramador P WHERE id = 1),  -- diagramador
+TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),  -- data revisao
+(SELECT REF(P) FROM tab_editor P WHERE id = 1),  -- editor
+tp_nt_materias(
         TP_MATERIA(5, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
         (SELECT REF(P) FROM tab_editor P WHERE ID = 1), 
@@ -189,6 +193,8 @@ insert into tab_edicao values (
                     tp_caderno_tematico('descrição genérica', 'tema genérico', 
                     TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
                     (SELECT REF(P) FROM tab_diagramador P WHERE id = 1), 
+		    TO_DATE('1989/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),  -- data revisao
+	            (SELECT REF(P) FROM tab_editor P WHERE id = 1),  -- editor
                     tp_nt_materias(
                          TP_MATERIA(8, 'LEAD DA MATÉRIA 2', 'MANCHETE - TEXTO EM DESTAQUE 3', 'TEXTO ALEATÓRIO DA MATÉRIA ... 3 ', 'TÍTULO GENÉRICO 3 ', 
                         TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 
