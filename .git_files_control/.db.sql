@@ -39,7 +39,10 @@ CREATE OR REPLACE TYPE tp_funcionario  AS OBJECT (
         cpf varchar2(255),
         data_admissao timestamp,
         contato REF tp_contato,
-        endereco REF tp_endereco
+        endereco REF tp_endereco, 
+
+	MEMBER PROCEDURE exibir_detalhes ( SELF tp_funcionario)
+
 ) NOT INSTANTIABLE NOT FINAL;
   
 CREATE OR REPLACE TYPE tp_diretor_executivo UNDER  tp_funcionario(
@@ -59,7 +62,7 @@ ALTER TYPE tp_funcionario ADD ATTRIBUTE supervisor REF tp_diretor_executivo CASC
 CREATE OR REPLACE TYPE tp_departamento AS OBJECT  (
   	cod NUMBER(4),
         nome varchar2(255),
-        chefe REF  tp_diretor_executivo
+        chefe REF  tp_diretor_executivo,
 );
 
 ALTER TYPE tp_funcionario ADD ATTRIBUTE setor REF tp_departamento CASCADE;  
@@ -217,6 +220,15 @@ CREATE OR REPLACE TYPE BODY tp_materia AS FINAL MAP MEMBER FUNCTION lista_por_da
 	p timestamp := data_escrita;
 	BEGIN
 		RETURN p;
+	END;
+END;
+
+
+
+CREATE OR REPLACE TYPE BODY tp_funcionario AS MEMBER PROCEDURE exibir_detalhes ( SELF tp_funcionario) IS	
+	BEGIN
+		DBMS_OUTPUT.PUT_LINE('Detalhes do funcionário');
+		DBMS_OUTPUT.PUT_LINE('Nome: ' ||nome);
 	END;
 END;
 
