@@ -36,7 +36,7 @@ update tab_materia m set m.texto = 'blá blá blá' where cod = 500;
 -- para testar a triguer primeiro execute o código de criação da trigger
 
 CREATE OR REPLACE TRIGGER verifica_diretor_executivo
-AFTER INSERT ON tab_diretor_executivo
+AFTER  INSERT OR DELETE OR UPDATE ON tab_diretor_executivo
 DECLARE
     v_sup TP_DIRETOR_EXECUTIVO;
 BEGIN
